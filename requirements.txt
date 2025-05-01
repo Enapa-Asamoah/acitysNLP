@@ -28,6 +28,7 @@ pillow==10.2.0
 pytesseract==0.3.10
 
 # Add command to download spaCy model in build
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
 # python -m spacy download en_core_web_sm
 
 # Memory optimization - limit worker threads for CPU-bound tasks
