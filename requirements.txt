@@ -28,7 +28,7 @@ pillow==10.2.0
 pytesseract==0.3.10
 
 # Add command to download spaCy model in build
-python -m spacy download en_core_web_sm
+# python -m spacy download en_core_web_sm
 
 # Memory optimization - limit worker threads for CPU-bound tasks
 threadpoolctl==3.2.0
