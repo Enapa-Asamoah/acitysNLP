@@ -372,7 +372,10 @@ def ask_model(context, query, api_url, api_key, retries=3, wait=5):
     
     for attempt in range(retries):
         with st.spinner(f"Generating answer (attempt {attempt+1}/{retries})..."):
-            response = requests.post(api_url, headers=headers, json=payload)
+            # Ensure header values are str and strictly ASCII/lower Latin-1
+            clean_headers = {k: str(v).encode('latin-1', errors='ignore').decode('latin-1') for k, v in headers.items()}
+            response = requests.post(api_url, headers=clean_headers, json=payload)
+
             if response.status_code == 200:
                 raw_response = response.json()[0]["generated_text"]
                 answer = parse_model_response(raw_response)
@@ -897,7 +900,6 @@ with st.sidebar:
     
     model_options = {
         "Phi-3 Mini": "microsoft/phi-3-mini-4k-instruct",
-        "Flan T5 Small": "google/flan-t5-small",
         "Flan T5 Base": "google/flan-t5-base",
         "MiniLM": "sentence-transformers/all-MiniLM-L6-v2"
     }
@@ -1165,8 +1167,7 @@ if st.session_state.processed_pdfs:
     sample_questions = [
         "What programs does Academic City offer?",
         "Who is the president of Academic City?",
-        "What is the vision of Academic City?",
-        "What is the mission of Academic City?",
+        "What is the vision and mission of Academic City?",
         "What are the admission requirements?"
     ]
     
