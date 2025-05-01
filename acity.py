@@ -1165,7 +1165,8 @@ if st.session_state.processed_pdfs:
     sample_questions = [
         "What programs does Academic City offer?",
         "Who is the president of Academic City?",
-        "What is the vision and mission of Academic City?",
+        "What is the vision of Academic City?",
+        "What is the mission of Academic City?",
         "What are the admission requirements?"
     ]
     
