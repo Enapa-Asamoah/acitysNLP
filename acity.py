@@ -896,10 +896,10 @@ with st.sidebar:
     """, unsafe_allow_html=True)
     
     model_options = {
+        "Phi-3 Mini": "microsoft/phi-3-mini-4k-instruct",
         "Flan T5 Small": "google/flan-t5-small",
         "Flan T5 Base": "google/flan-t5-base",
-        "MiniLM": "sentence-transformers/all-MiniLM-L6-v2",
-        "Phi-3 Mini": "microsoft/phi-3-mini-4k-instruct"
+        "MiniLM": "sentence-transformers/all-MiniLM-L6-v2"
     }
     
     selected_model = st.selectbox("Select Model", list(model_options.keys()))
