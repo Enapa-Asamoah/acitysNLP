@@ -1121,7 +1121,7 @@ if st.session_state.processed_pdfs:
     st.markdown(f"""
         <div style="background-color:#F8F9FA; padding:15px; border-radius:5px; margin-top:30px; margin-bottom:20px; border-left:5px solid {ACITY_PRIMARY};">
             <h3 style="color:{ACITY_PRIMARY};">Ask Questions About Your Documents</h3>
-            <p style="color:black;">Enter your question below to get accurate answers from your PDFs.<br> Choose Phi-3-Mini for best results</p>
+            <p style="color:black;">Enter your question below to get accurate answers from your PDFs.</p>
         </div>
     """, unsafe_allow_html=True)
     
